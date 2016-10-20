@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tutorialApp">
+<head>
+  <base href="/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content=">Tutorial App"/>
+  <meta name="description" content=">Erb Chat Scripts">
+  <meta name="theme-color" content="#79be37">
+  <meta name="p:domain_verify" content="e22136ab81ca3341b04755aadb53f77f"/>
+  <title>Infusionsoft Tutorials</title>
+  <link rel="icon" href="content/img/favicon.ico" type="image/x-icon" />
+  <!--CSS-->
+  <link rel="stylesheet" href="content/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!--JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="content/js/headroom.min.js"></script>
+  <script src="content/js/wow.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+  <script src="content/js/clipboard.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!--Angular-->
+  <script src="app/lib/angular.min.js"></script>
+  <script src="app/lib/angular-animate.min.js"></script>
+  <script src="app/lib/angular-route.min.js"></script>
+  <script src="app/lib/ngclipboard.min.js"></script>
+  <script src="app/lib/angular.headroom.js"></script>
+  <script src="app/lib/checklist-model.js"></script>
+  <script src="app/lib/angular-cookies.min.js"></script>
+  <script src="app/app.js"></script>
+</head>
+<body class="purple_solid">
+    <!-- <nav ng-include src="'views/nav.html'"></nav> -->
+
+    <main class="page {{pageClass}}" ng-view></main>
+
+</body>
+</html>

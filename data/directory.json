@@ -1,0 +1,9 @@
+[{
+  "title": "getting started",
+  "icon": "gettingstarted.png",
+  "view": "get-started"
+}, {
+  "title": "import contacts",
+  "icon": "crm-icon.png",
+  "view": "import-contacts"
+}]

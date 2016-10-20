@@ -1,0 +1,39 @@
+.large_logo img {
+  margin: 0 auto 2em auto;
+  width: 50%;
+}
+
+/*directory nav -card*/
+.card_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: inline-block;
+  background: #fff;
+  padding: 3em;
+  margin: 3vmax;
+  max-width: 200px;
+  height: auto;
+  color: #303442;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 3px 4px 20px rgba(41,41,41,.5);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+a.card {
+  text-decoration: none;
+}
+
+.card_icon_wrap img {
+  width: 70px;
+  margin: 2em auto 0 auto;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}

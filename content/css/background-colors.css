@@ -1,0 +1,62 @@
+/*----SOLID BACKGROUNDS----*/
+.white_solid {
+  background-color: white;
+  color: #303442;
+}
+
+.lightgray_solid {
+    background-color: #f6f6f7;
+    background-color: rgba(245,245,245,1);
+    color: #303442;
+}
+
+.gray_solid {
+    background-color: #e8ebee;
+    background-color: rgba(232,235,238,1);
+    color: #303442;
+}
+
+.darkgray_solid {
+    background-color: rgba(111,111,111,1);
+    color: #303442;
+}
+
+.orange_solid {
+    background: #ff9610;
+    background-color: rgba(255,150,16,1);
+    color: #fff;
+}
+
+.green_solid {
+    background: #79be37;
+    background-color: rgba(121,190,55,1);
+    color: #fff;
+}
+
+.blue_solid {
+    background: #00baf7;
+    background-color: rgba(66,186,247,1);
+    color: #fff;
+}
+
+.purple_solid {
+    background: #8464CA;
+    background-color: rgba(132,100,202,1);
+    color: #fff;
+}
+
+/*----FADED BACKGROUNDS----*/
+.gray_fade {
+    background-color: rgba(89,89,89,.5);
+    color: #fff;
+}
+
+.orange_fade {
+    background: rgba(245,95,65,.8);
+    color: #fff;
+}
+
+.blue_fade {
+    background: rgba(71,175,194,.8);
+    color: #fff;
+}

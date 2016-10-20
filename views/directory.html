@@ -1,0 +1,25 @@
+<div class="page_wrap">
+  <header>
+    <div class="large_logo wow fadeIn">
+      <h1 class="hiddenH1">Infusionsoft</h1>
+      <img draggable="false" src="content/img/Infusionsoft Logo/1 Color/Infusionsoft-logo-cornerstone 1 color - White.png" alt="Infusionsoft logo"/>
+    </div>
+    <h3>Your personal check list guide for Infusionsoft</h3>
+  </header>
+
+
+    <div class="card_container">
+      <div ng-repeat="card in directory">
+        <a class="card" ng-href="/{{card.view}}">
+          <h6 class="card_title">{{card.title}}</h6>
+          <div class="card_icon_wrap">
+            <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="get started icon" />
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+
+
+</div>
