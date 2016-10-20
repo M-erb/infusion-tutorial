@@ -1,8 +1,6 @@
 # infusion-tutorial
 
-NAME: New Customer Tutorials
-
-##<<GOALS>>
+##GOALS
 1) Give direct instruction and helpful information so a new customer can get started BEFORE their first call
 >need a good list of things a new customer should do before the first call
 - import contacts?
