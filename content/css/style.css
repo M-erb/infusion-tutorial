@@ -127,6 +127,13 @@ footer {
 	padding: 3em 0;
 }
 
+/*flex containers*/
+.flex_center {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
 /*-page Page Animations
 ------------------------------------------------------------------------------*/
 .page {

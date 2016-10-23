@@ -17,7 +17,6 @@
     user-select: none;
 }
     .btn:hover {
-        background: transparent;
         box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
     }
 
@@ -28,6 +27,7 @@
 }
     .btn_white:hover {
         color: #302B2C;
+        background: white;
     }
 
   .btn_transparent {

@@ -1,9 +1,13 @@
 [{
+  "id": 0,
   "title": "getting started",
   "icon": "gettingstarted.png",
-  "view": "get-started"
+  "view": "get-started",
+  "cookieCard": "{{getStarted}}"
 }, {
+  "id": 1,
   "title": "import contacts",
   "icon": "crm-icon.png",
-  "view": "import-contacts"
+  "view": "import-contacts",
+  "cookieCard": "{{importCard}}"
 }]

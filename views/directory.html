@@ -7,18 +7,59 @@
     <h3>Your personal check list guide for Infusionsoft</h3>
   </header>
 
+<!-- would be best to figure this out so it can use an ng-repeat
+  <div class="card_container">
+    <div ng-repeat="card in directory">
+      <a id="directory{{card.id}}" ng-style="setColor(card)" class="card" ng-href="/{{card.view}}">
+        <h6 class="card_title">{{card.title}}</h6>
+        <div class="card_icon_wrap">
+          <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="{{card.title}}" />
+        </div>
+      </a>
+    </div>
+  </div>
+-->
 
-    <div class="card_container">
-      <div ng-repeat="card in directory">
-        <a class="card" ng-href="/{{card.view}}">
-          <h6 class="card_title">{{card.title}}</h6>
-          <div class="card_icon_wrap">
-            <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="get started icon" />
-          </div>
-        </a>
+  <div class="card_container">
+    <a class="card" href="/get-started">
+      <h6 class="card_title">getting started</h6>
+      <div class="card_icon_wrap">
+        <img src="content/img/icons/gettingstarted.png" alt="get started icon" />
       </div>
+    </a>
+
+    <a ng-style="setColor(card)" class="card" href="/import-contacts">
+      <h6 class="card_title">import contacts</h6>
+      <div class="card_icon_wrap">
+        <img src="content/img/icons/crm-icon.png" alt="Import contacts icon" />
+      </div>
+    </a>
+  </div>
+
+
+  <div style="text-align:center;margin-bottom:2em">
+    <h2 style="margin-bottom:0.2em">BELOW IS JUST FOR COOKIE TESTING</h2>
+    <p>Please ignore</p>
+  </div>
+
+  <div class="flex_center">
+
+    <div>
+    test:  {{test}}
+    </div>
+    <div id="testBtn" class="btn btn_white" ng-click="createCookie('red')">
+      Click for test Red
+    </div>
+    <div class="btn btn_white" ng-click="createCookie('blue')">
+      Click for test Blue
+    </div>
+    <div>
+      My cookie is: {{myCookie}}
+    </div>
+    <div style="width:50px;height:50px;background:{{boxColor}}">
 
     </div>
+  </div>
 
 
 
