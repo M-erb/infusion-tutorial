@@ -1,27 +1,10 @@
-// angular.module('checkCookies', []).directive('myColor',
-//   function() {
-//     return {
-//       model: {
-// 		      directoryCookie: '@'
-//       },
-//       link: function($scope, element, attrs, controller, $cookies) {
-//         console.log('myCookie name: '+attrs.directoryCookie);
-//         if ($cookies.get('getStarted') == 'done') {
-//           //importDirec.style.backgroundColor = "#fff";
-//           //importDirec.style.filter = 'grayscale(0%)';
-//           console.log('Get started is done');
-//         }
-//       }
-//     };
-//   }
-// );
-
-var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ngRoute','ngclipboard','headroom','checklist-model','ngCookies']);
+var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ngRoute','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
 
 
-tutorialApp.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider){
+tutorialApp.config(['$routeProvider','$locationProvider', '$localStorageProvider', function($routeProvider, $locationProvider, $localStorageProvider){
 
   $locationProvider.html5Mode(true);
+  $localStorageProvider.setKeyPrefix('');
 
   $routeProvider
     .when('/', {
@@ -41,7 +24,7 @@ tutorialApp.config(['$routeProvider','$locationProvider', function($routeProvide
 
 }]);
 
-tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
+tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
 
   $http.get('data/directory.json').success(function(Data){
     $scope.directory = Data;
@@ -49,27 +32,23 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', function
 
   $scope.pageClass = 'directory';
 
-  $scope.createCookie = function(color) {
-    $cookies.put('myCookie', color);
-    $scope.myCookie = $cookies.get('myCookie');
-    console.log('cookie updated: '+$scope.myCookie);
-  }
+  $scope.setColor = function() {
+    // useing cookies
+    // if ($cookies.get('getStarted') == 'done') {
+    //   console.log('Get started is done');
+    //   return {'background-color':'#fff','filter':'grayscale(0)'};
+    // }else {
+    //   console.log('Get started is NOT done');
+    //   return {'background-color':'rgb(240,240,240)','filter':'grayscale(1)'};
+    // }
 
-  $scope.setColor = function(card) {
     // get started check
-    if ($cookies.get('getStarted') == 'done') {
-      console.log('Get started is done');
+    if ($localStorage.getingStarted == 'done') {
       return {'background-color':'#fff','filter':'grayscale(0)'};
     }else {
-      console.log('Get started is NOT done');
       return {'background-color':'rgb(240,240,240)','filter':'grayscale(1)'};
     }
   };
-
-  $scope.myCookie = $cookies.get('myCookie');
-  //$scope.boxColor = 'black';
-
-  console.log('myCookie log: '+$cookies.get('myCookie'));
 
 
 
@@ -103,7 +82,7 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', function
 
 
 
-tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
+tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
 
   $http.get('data/get-started.json').success(function(Data){
     $scope.directory = Data;
@@ -111,10 +90,10 @@ tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', functio
 
   $scope.pageClass = 'getStarted';
 
-  $scope.displayCookie = $cookies.get('myCookie');
-
   $scope.getStartedDone = function() {
-    $cookies.put('getStarted', 'done');
+    //$cookies.put('getStarted', 'done');
+
+    $localStorage.getingStarted = 'done';
   };
 
 }]);
