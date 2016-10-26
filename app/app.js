@@ -33,15 +33,6 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
   $scope.pageClass = 'directory';
 
   $scope.setColor = function() {
-    // useing cookies
-    // if ($cookies.get('getStarted') == 'done') {
-    //   console.log('Get started is done');
-    //   return {'background-color':'#fff','filter':'grayscale(0)'};
-    // }else {
-    //   console.log('Get started is NOT done');
-    //   return {'background-color':'rgb(240,240,240)','filter':'grayscale(1)'};
-    // }
-
     // get started check
     if ($localStorage.getingStarted == 'done') {
       return {'background-color':'#fff','filter':'grayscale(0)'};
@@ -91,7 +82,6 @@ tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', '$local
   $scope.pageClass = 'getStarted';
 
   $scope.getStartedDone = function() {
-    //$cookies.put('getStarted', 'done');
 
     $localStorage.getingStarted = 'done';
   };
