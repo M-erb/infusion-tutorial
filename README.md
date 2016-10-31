@@ -1,14 +1,31 @@
-# infusion-tutorial
+# Infusion-Tutorial
 
-##GOALS
+## GOALS
 1) Give direct instruction and helpful information so a new customer can get started 
+
+
+2) Save time for Consultants AND Customer during call to get into the meat of their business and start using Infusionsoft with it
+
+
+3) So easy to use the new customer does not need to think about it.
+- app explains itself
+
 
 # Phase 1 - Getting Started
 
 ## Familiarizing the Layout
 1. Main Navigation
 2. Top Nav Icons
+* Home
+* Recent
+* Favorites
+* Marketplace
+* User
+* Help
 3. Billing & Account Info
+* Contact Limits
+* Emails
+* Add Ons
 
 ## Importing Contacts
 1. Preparing CSV
@@ -290,9 +307,3 @@
 5. Companies
 
 ## VAS
-
-2) Save time for Consultants AND Customer during call to get into the meat of their business and start using Infusionsoft with it
-
-
-3) So easy to use the new customer does not need to think about it.
-- app explains itself
