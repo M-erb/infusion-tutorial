@@ -82,9 +82,14 @@ tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', '$local
   $scope.pageClass = 'getStarted';
 
   $scope.getStartedDone = function() {
-
     $localStorage.getingStarted = 'done';
   };
+
+
+  $scope.testBtn = function() {
+    $localStorage.test.value1 = 'look at this cool test';
+    $localStorage.test.value2 = 'No way, is this is working?';
+  }
 
 }]);
 
