@@ -1,11 +1,11 @@
 [{
-  "id": 0,
+  "id": "item1",
   "title": "getting started",
   "icon": "gettingstarted.png",
   "view": "get-started",
   "cookieCard": "{{getStarted}}"
 }, {
-  "id": 1,
+  "id": "item2",
   "title": "import contacts",
   "icon": "crm-icon.png",
   "view": "import-contacts",

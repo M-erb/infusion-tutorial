@@ -7,10 +7,10 @@
     <h3>Your personal check list guide for Infusionsoft</h3>
   </header>
 
-<!-- would be best to figure this out so it can use an ng-repeat
+<!-- would be best to figure this out so it can use an ng-repeat-->
   <div class="card_container">
     <div ng-repeat="card in directory">
-      <a id="directory{{card.id}}" ng-style="setColor(card)" class="card" ng-href="/{{card.view}}">
+      <a id="{{card.id}}" ng-style="testSetColor(card, card.title)" class="card" ng-href="/{{card.view}}">
         <h6 class="card_title">{{card.title}}</h6>
         <div class="card_icon_wrap">
           <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="{{card.title}}" />
@@ -18,7 +18,7 @@
       </a>
     </div>
   </div>
--->
+
 
   <div class="card_container">
 

@@ -1,6 +1,5 @@
 var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ngRoute','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
 
-
 tutorialApp.config(['$routeProvider','$locationProvider', '$localStorageProvider', function($routeProvider, $locationProvider, $localStorageProvider){
 
   $locationProvider.html5Mode(true);
@@ -40,6 +39,20 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
       return {'background-color':'rgb(240,240,240)','filter':'grayscale(1)'};
     }
   };
+
+  $scope.testSetColor = function(card, title) {
+    console.log('what shows up?: '+card)
+    console.log('what shows up?: '+title)
+    // if (title == 'getting started') {
+    //
+    // }
+    // if (title == 'getting started') {
+    //   if ($localStorage.getingStarted == 'done') {
+    //
+    //   }
+    // }
+
+  }
 
 
 
