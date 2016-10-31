@@ -101,7 +101,7 @@ VAS
 ##TO DO
 * Progress bar with in app.
 * Phases
-* No long pages(nothing overwhelmping, just put it in a new step)
+* No long pages(nothing overwhelming, just put it in a new step)
 
 ##IDEAS
 Upsell to VAS for complicated areas
