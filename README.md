@@ -97,3 +97,13 @@ VAS
 
 3) So easy to use the new customer does not need to think about it.
 - app explains itself
+
+##TO DO
+* Progress bar with in app.
+* Phases
+* No long pages(nothing overwhelmping, just put it in a new step)
+
+##IDEAS
+Upsell to VAS for complicated areas
+
+Refer a friend
