@@ -31,6 +31,10 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
 
   $scope.pageClass = 'directory';
 
+  $scope.testWow = function() {
+    $localStorage.testDirective = 'hey look!';
+  }
+
   $scope.setColor = function() {
     // get started check
     if ($localStorage.getingStarted == 'done') {
