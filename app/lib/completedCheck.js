@@ -5,14 +5,15 @@ tutorialApp.directive('completedCheck', function() {
     scope: {
       myvalue: '='
     },
-    link: function(scope, elem, attrs) {
+    link: function(scope, element, attributes) {
+      scope.text = attributes["myColors"];
     //  console.log(scope.myvalue);
     //  console.log(attrs)
     //  console.log(elem)
-      var colors = 'red';
     //  elem.style.backgroundColor = 'red';
 
-      console.log(elem);
+
+      console.log(scope.text);
     }
   };
 });
