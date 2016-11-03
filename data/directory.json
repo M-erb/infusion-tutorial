@@ -2,12 +2,10 @@
   "id": "item1",
   "title": "getting started",
   "icon": "gettingstarted.png",
-  "view": "get-started",
-  "cookieCard": "{{getStarted}}"
+  "view": "get-started"
 }, {
   "id": "item2",
   "title": "import contacts",
   "icon": "crm-icon.png",
-  "view": "import-contacts",
-  "cookieCard": "{{importCard}}"
+  "view": "import-contacts"
 }]

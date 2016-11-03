@@ -2,9 +2,17 @@ tutorialApp.directive('completedCheck', function() {
   return {
     replace: 'false',
     restrict: 'AE',
-    template: '<h2>This is a great test</h2>',
+    scope: {
+      myvalue: '='
+    },
     link: function(scope, elem, attrs) {
+    //  console.log(scope.myvalue);
+    //  console.log(attrs)
+    //  console.log(elem)
+      var colors = 'red';
+    //  elem.style.backgroundColor = 'red';
 
+      console.log(elem);
     }
   };
 });

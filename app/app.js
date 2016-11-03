@@ -39,7 +39,7 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
       return {'background-color':'rgb(240,240,240)','filter':'grayscale(1)'};
     }
   };
-
+/*
   $scope.testSetColor = function(card, title) {
     console.log('what shows up?: '+card)
     console.log('what shows up?: '+title)
@@ -53,7 +53,7 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
     // }
 
   }
-
+*/
 
 
   //checkbox properties
