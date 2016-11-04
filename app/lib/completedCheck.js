@@ -17,5 +17,5 @@ http://stackoverflow.com/questions/17900201/how-to-access-parent-scope-from-with
 
 http://stackoverflow.com/questions/14049480/what-are-the-nuances-of-scope-prototypal-prototypical-inheritance-in-angularjs
 
-
+https://www.sitepoint.com/practical-guide-angularjs-directives/
 */

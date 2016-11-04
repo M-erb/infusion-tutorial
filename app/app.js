@@ -25,15 +25,22 @@ tutorialApp.config(['$routeProvider','$locationProvider', '$localStorageProvider
 
 tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
 
-  $http.get('data/directory.json').success(function(Data){
-    $scope.directory = Data;
-  });
-
+  $scope.storage = $localStorage
   $scope.pageClass = 'directory';
 
-  $scope.testWow = function() {
-    $localStorage.testDirective = 'hey look!';
-  }
+  $http.get('data/directory.json').success(function(Data){
+    $scope.directory = Data;
+  })
+
+  $localStorage.getingStarted
+
+
+
+
+
+
+
+
 
   $scope.setColor = function() {
     // get started check
@@ -42,46 +49,15 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
     }else {
       return {'background-color':'rgb(240,240,240)','filter':'grayscale(1)'};
     }
-  };
-/*
-  $scope.testSetColor = function(card, title) {
-    console.log('what shows up?: '+card)
-    console.log('what shows up?: '+title)
-    // if (title == 'getting started') {
-    //
-    // }
-    // if (title == 'getting started') {
-    //   if ($localStorage.getingStarted == 'done') {
-    //
-    //   }
-    // }
-
   }
-*/
 
-
-  //checkbox properties
-  //---> checklist-model set up
-  /*
-  $scope.chatCats = [
-    {
-      name: 'hellos',
-      shortName: 'hellos'
-    },
-    {
-      name: 'Service Referrals - VAS',
-      shortName: 'ServiceReferrals-VAS'
+  //house keeping for local storage
+  var directoryCheck = function() {
+    if ($localStorage.getingStarted == null) {
+      $localStorage.getingStarted = {}
     }
-  ];
+  }
 
-  $scope.chatCatsSelected = {
-    name: []
-  };
-
-  $scope.uncheckAll = function() {
-    $scope.chatCatsSelected.name = [];
-  };
-  */
 
 }]);
 
@@ -91,6 +67,7 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
 
 
 tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
+  $scope.storage = $localStorage
 
   $http.get('data/get-started.json').success(function(Data){
     $scope.directory = Data;

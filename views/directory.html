@@ -7,40 +7,28 @@
     <h3>Your personal check list guide for Infusionsoft</h3>
   </header>
 
-<!-- would be best to figure this out so it can use an ng-repeat-->
+<!-- would be best to figure this out so it can use an ng-repeat
   <div class="card_container">
-    <div ng-repeat="card in directory">
-      <a id="{{card.id}}" ng-style="testSetColor(card, card.title)" class="card" ng-href="/{{card.view}}">
+    <div ng-repeat="card in directory" ng-class="{'inactive': }">
+      <a id="{{card.id}}" class="card" ng-href="/{{card.view}}">
         <h6 class="card_title">{{card.title}}</h6>
         <div class="card_icon_wrap">
           <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="{{card.title}}" />
         </div>
       </a>
     </div>
-  </div>
-
-  <div completed-check="green">
-    <h2>This is green test</h2>
-  </div>
-  <div completed-check="red">
-    <h3>This is red test</h3>
-  </div>
-
-  <div completed-check="orange">
-    <p>This is orange test</p>
-  </div>
-
+  </div>-->
 
   <div class="card_container">
 
-    <a class="card" href="/get-started">
+    <a class="card active" href="/get-started" ng-click="">
       <h6 class="card_title">getting started</h6>
       <div class="card_icon_wrap">
         <img src="content/img/icons/gettingstarted.png" alt="get started icon" />
       </div>
     </a>
 
-    <a ng-style="setColor()" class="card" href="/import-contacts">
+    <a class="card ng-class:{'active': storage.gettingStarted.completed }" href="/import-contacts">
       <h6 class="card_title">import contacts</h6>
       <div class="card_icon_wrap">
         <img src="content/img/icons/crm-icon.png" alt="Import contacts icon" />

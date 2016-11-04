@@ -24,6 +24,8 @@
   box-shadow: 3px 4px 20px rgba(41,41,41,.5);
   transition: all 0.2s;
   cursor: pointer;
+  filter: grayscale(1);
+  background: rgb(240,240,240);
 }
 a.card {
   text-decoration: none;
@@ -39,7 +41,7 @@ a.card {
 }
 
 /*activity colors*/
-.gray_scale {
-  filter: grayscale(1);
-  background: rgb(240,240,240);
+.active {
+  filter: grayscale(0);
+  background: #fff;
 }
