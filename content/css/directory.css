@@ -41,7 +41,7 @@ a.card {
 }
 
 /*activity colors*/
-.active {
+.ready {
   filter: grayscale(0);
   background: #fff;
 }

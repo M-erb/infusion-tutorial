@@ -52,11 +52,11 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
   }
 
   //house keeping for local storage
-  var directoryCheck = function() {
-    if ($localStorage.getingStarted == null) {
-      $localStorage.getingStarted = {}
-    }
-  }
+  // var directoryCheck = function() {
+  //   if ($localStorage.directory == null) {
+  //     $localStorage.directory = {}
+  //   }
+  // }
 
 
 }]);
