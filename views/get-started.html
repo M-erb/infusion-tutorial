@@ -1,14 +1,32 @@
 <div class="page_wrap">
-  <header>
-    <h1>getting started</h1>
-  </header>
   <div>
+    <header>
+      <h1>getting started</h1>
+    </header>
     <a class="btn btn_white" href="/">Back</a>
   </div>
-  {{displayCookie}}
 </div>
 
+<div class="card_container">
 
+  <a class="card directory ready" href="/get-started/layout">
+    <h6 class="card_title">Familiarizing the Layout</h6>
+    <div class="card_icon_wrap">
+      <img src="content/img/icons/gettingstarted.png" alt="get started icon" />
+    </div>
+  </a>
+
+  <a class="card directory ng-class:{'ready': storage.directory.gettingStarted=='done' }" href="get-started/import-contacts">
+    <h6 class="card_title">Importing Contacts</h6>
+    <div class="card_icon_wrap">
+      <img src="content/img/icons/crm-icon.png" alt="Import contacts icon" />
+    </div>
+  </a>
+
+</div>
+
+<!--
 <div class="flex_center">
   <a class="btn btn_blue" href="/" ng-click="storage.directory.gettingStarted='done'">Done</a>
 </div>
+-->

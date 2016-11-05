@@ -13,9 +13,9 @@
 .card {
   display: inline-block;
   background: #fff;
-  padding: 3em;
+  padding: 3em 1em;
   margin: 3vmax;
-  max-width: 200px;
+  width: 190px;
   height: auto;
   color: #303442;
   text-align: center;

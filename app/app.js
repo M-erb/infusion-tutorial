@@ -12,11 +12,15 @@ tutorialApp.config(['$routeProvider','$locationProvider', '$localStorageProvider
     })
     .when('/get-started', {
       templateUrl:'views/get-started.html',
-      controller:'getStartedCtrl'
+      controller:'phase1'
     })
-    .when('/import-contacts', {
-      templateUrl:'views/import-contacts.html',
-      controller:'importCtrl'
+    .when('/get-started/layout', {
+      templateUrl:'views/get-started/layout.html',
+      controller:'phase1'
+    })
+    .when('/users', {
+      templateUrl:'views/users.html',
+      controller:'phase2'
     }).otherwise({
       redirectTo:'/'
     });
@@ -66,7 +70,7 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
 
 
 
-tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
+tutorialApp.controller('phase1', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
   $scope.storage = $localStorage
 
   $http.get('data/get-started.json').success(function(Data){
@@ -93,7 +97,7 @@ tutorialApp.controller('getStartedCtrl', ['$scope', '$http', '$cookies', '$local
 
 
 
-tutorialApp.controller('importCtrl', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
+tutorialApp.controller('phase2', ['$scope', '$http', '$cookies', function($scope, $http, $cookies){
 
   $http.get('data/get-started.json').success(function(Data){
     $scope.import = Data;

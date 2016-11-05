@@ -1,74 +1,74 @@
 /*==========BUTTONS==========*/
 .btn {
-  font-size: 1em;
+  font-size: 0.8em;
+  font-weight: bold;
   cursor: pointer;
-    padding: 1em 2em;
-    text-decoration: none;
-    border-radius: 3px;
-    border: none;
-    border: 0;
-    display: inline-block;
-    transition: all .3s;
-    white-space: nowrap;
-    box-shadow: 1px 1px 3px rgba(41,41,41,0.5);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  padding: 0.8em 2.5em;
+  text-decoration: none;
+  border-radius: 3px;
+  border: none;
+  border: 0;
+  display: inline-block;
+  transition: all .2s;
+  white-space: nowrap;
+  box-shadow: 1px 1px 3px rgba(41,41,41,0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-    .btn:hover {
-        box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
-    }
+  .btn:hover {
+      box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
+  }
 
 .btn_white {
-    border: 1px solid white;
     color: #302B2C;
     background: white;
 }
-    .btn_white:hover {
-        color: #302B2C;
-        background: white;
-    }
-
-  .btn_transparent {
-      border: 1px solid white;
+  .btn_white:hover {
       color: #302B2C;
-      background: transparent;
-      border-radius: 3px;
-      padding: 0.3em 0.5em;
-      transition: all .3s;
+      background: white;
   }
-      .btn_transparent:hover {
-          color: #302B2C;
-          background: white;
-      }
+
+.btn_transparent {
+    border: 1px solid white;
+    color: #302B2C;
+    background: transparent;
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    transition: all .3s;
+}
+  .btn_transparent:hover {
+      color: #302B2C;
+      background: white;
+  }
 
 .btn_darkgray {
     border: 1px solid #2D2D30;
     color: white;
     background: #2D2D30;
 }
-    .btn_darkgray:hover {
-        color: white;
-    }
+  .btn_darkgray:hover {
+      color: white;
+  }
 
 .btn_orange {
     color: white;
     background-color: rgba(255,150,16,1);
 }
-    .btn_orange:hover {
-        color: white;
-        background: rgba(255,100,16,1);
-    }
+  .btn_orange:hover {
+      color: white;
+      background: rgba(255,100,16,1);
+  }
 
 .btn_blue {
     color: white;
     background: rgba(66,186,247,1);
 }
-    .btn_blue:hover {
-        color: white;
-        background: rgba(66,186,255,1);
-    }
+  .btn_blue:hover {
+      color: white;
+      background: rgba(66,186,255,1);
+  }
 
 /*---SMALL BUTTONS---*/
 .button_orange_sm {

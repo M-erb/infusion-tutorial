@@ -5,7 +5,7 @@
   "view": "get-started"
 }, {
   "id": "item2",
-  "title": "import contacts",
+  "title": "ssers",
   "icon": "crm-icon.png",
-  "view": "import-contacts"
+  "view": "users"
 }]

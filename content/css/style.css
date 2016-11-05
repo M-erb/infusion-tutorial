@@ -37,7 +37,7 @@ blockquote:before, blockquote:after,
 q:before, q:after {content: '';content: none;}
 *, *::after, *::before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 h1 {
-  font-size: 4em;
+  font-size: 3em;
 }
 h1.hiddenH1 {
 	opacity: 0;
@@ -72,10 +72,6 @@ img {
   -ms-user-select: none;
   user-select: none;
 	display: block; max-width: 100%;
-}
-/*wow*/
-.wow:first-child {
-	visibility: hidden;
 }
 /*-body*/
 body {
