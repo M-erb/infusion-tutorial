@@ -39,11 +39,36 @@ a.card {
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /*activity colors*/
 .directory.card.ready {
   filter: grayscale(0);
   background: #fff;
+}
+
+/*check lists*/
+.checklist_container {
+  display: block;
+  width: 100%;
+  margin: 2em 0;
+}
+.checklist {
+  background: #fff;
+  border: none;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 3px 4px 20px rgba(41,41,41,.5);
+  display: block;
+  text-decoration: none;
+  color: #414141;
+  padding: 1em;
+  margin-bottom: 1em;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.checklist:hover {
+  transform: scale(1.02);
 }

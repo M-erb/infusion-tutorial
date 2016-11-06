@@ -7,26 +7,19 @@
   </div>
 </div>
 
-<div class="card_container">
+<div class="page_wrap">
+  <div class="checklist_container">
 
-  <a class="card directory ready" href="/get-started/layout">
-    <h6 class="card_title">Familiarizing the Layout</h6>
-    <div class="card_icon_wrap">
-      <img src="content/img/icons/gettingstarted.png" alt="get started icon" />
+    <div ng-repeat="item in getStartedList">
+      <a class="checklist directory ready" href="/get-started/layout">
+        <h6 class="card_title">{{item.title}}</h6>
+      </a>
     </div>
-  </a>
 
-  <a class="card directory ng-class:{'ready': storage.directory.gettingStarted=='done' }" href="get-started/import-contacts">
-    <h6 class="card_title">Importing Contacts</h6>
-    <div class="card_icon_wrap">
-      <img src="content/img/icons/crm-icon.png" alt="Import contacts icon" />
-    </div>
-  </a>
+  </div>
 
+
+  <div class="flex_center">
+    <a class="btn btn_blue" href="/" ng-click="storage.directory.gettingStarted='done'">Done</a>
+  </div>
 </div>
-
-<!--
-<div class="flex_center">
-  <a class="btn btn_blue" href="/" ng-click="storage.directory.gettingStarted='done'">Done</a>
-</div>
--->
