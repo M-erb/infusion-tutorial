@@ -14,6 +14,9 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
     if ($localStorage.directory == null) {
       $localStorage.directory = {}
     }
+    if ($localStorage.getStarted == null) {
+      $localStorage.getStarted = {}
+    }
   }
   directoryCheck()
 
@@ -45,15 +48,13 @@ tutorialApp.controller('phase1', ['$scope', '$http', '$cookies', '$localStorage'
   $scope.getStartedList = [{
     id: "item1",
     title: "Familiarizing the Layout",
-    icon: "gettingstarted.png",
     view: "get-started",
-    check: true
+    check: $localStorage.getStarted.layout=='done'
   }, {
     id: "item2",
     title: "Importing Contacts",
-    icon: "crm-icon.png",
     view: "users",
-    check: $localStorage.directory.gettingStarted=='done'
+    check: $localStorage.getStarted.import=='done'
   }]
 
 }]);

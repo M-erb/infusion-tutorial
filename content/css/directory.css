@@ -59,8 +59,8 @@ a.card {
   border: none;
   border: 0;
   border-radius: 3px;
-  box-shadow: 3px 4px 20px rgba(41,41,41,.5);
-  display: block;
+  box-shadow: 2px 2px 20px -5px rgba(41,41,41,.5);
+  display: flex;
   text-decoration: none;
   color: #414141;
   padding: 1em;
@@ -71,4 +71,72 @@ a.card {
 
 .checklist:hover {
   transform: scale(1.02);
+  box-shadow: 5px 6px 20px -5px rgba(41,41,41,.5);
+}
+
+.checklist_title {
+  align-self: center;
+  margin-left: 1em;
+}
+
+
+/* Check mark*/
+.mark {
+  fill: none;
+  stroke: rgb(202,202,202);
+  stroke-miterlimit: 10;
+  stroke-width: 10px;
+}
+
+.checkmark_container svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.circle {
+  stroke-dasharray: 700;
+  /*stroke-dashoffset: 700;*/
+  stroke-dashoffset: 0;
+}
+
+.checkmark {
+  stroke-dasharray: 150;
+  /*stroke-dashoffset: 150;*/
+  stroke-dashoffset: 0;
+}
+
+.checkmark_container svg .checked {
+  stroke: #79be37;
+}
+
+/*
+.run-animation .circle {
+  -webkit-animation: 2.5s circleDraw forwards;
+          animation: 2.5s circleDraw forwards;
+}
+.run-animation .checkmark {
+  -webkit-animation: 0.75s checkmarkDraw forwards;
+          animation: 0.75s checkmarkDraw forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+*/
+
+@-webkit-keyframes circleDraw {
+  from {stroke-dashoffset: 700;}
+  to {stroke-dashoffset: 0;}
+}
+
+@keyframes circleDraw {
+  from {stroke-dashoffset: 700;}
+  to {stroke-dashoffset: 0;}
+}
+@-webkit-keyframes checkmarkDraw {
+  from {stroke-dashoffset: 150;}
+  to {stroke-dashoffset: 0;}
+}
+@keyframes checkmarkDraw {
+  from {stroke-dashoffset: 150;}
+  to {stroke-dashoffset: 0;}
 }
