@@ -34,6 +34,7 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
       title: "getting started",
       icon: "gettingstarted.png",
       check: true,
+      doneBtn: function(){$localStorage.directory.phase1='done'},
       phase: [{
           id: "item1",
           title: "Familiarizing the Layout",
@@ -48,6 +49,7 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
       title: "users",
       icon: "crm-icon.png",
       check: $localStorage.directory.phase1=='done',
+      doneBtn: function(){$localStorage.directory.phase2='done'},
       phase: [{
           id: "item1",
           title: "permissions",
@@ -66,6 +68,7 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
       title: "CRM - Contacts & Companies",
       icon: "contact.svg",
       check: $localStorage.directory.phase2=='done',
+      doneBtn: function(){$localStorage.directory.phase3='done'},
       phase: [{
           id: "item1",
           title: "Adding",
@@ -92,6 +95,7 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
       title: "Branding",
       icon: "happy.svg",
       check: $localStorage.directory.phase3=='done',
+      doneBtn: function(){$localStorage.directory.phase4='done'},
       phase: [{
           id: "item1",
           title: "branding center",
@@ -106,6 +110,7 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
       title: "Sales Pipeline",
       icon: "credit-card.svg",
       check: $localStorage.directory.phase4=='done',
+      doneBtn: function(){$localStorage.directory.phase5='done'},
       phase: [{
           id: "item1",
           title: "Familiarizing the Layout",
@@ -121,7 +126,7 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
       id: "phase6",
       title: "Marketing",
       icon: "email.svg",
-      check: $localStorage.directory.phase5=='done',
+      check: function(){$localStorage.directory.phase5=='done'},
       phase: [{
           id: "item1",
           title: "Familiarizing the Layout",
