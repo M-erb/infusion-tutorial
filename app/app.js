@@ -1,54 +1,5 @@
 var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ui.router','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
 
-tutorialApp.factory('directories',['$localStorage', function($localStorage){
-  var o = {
-    directory: [{
-      id: "phase1",
-      title: "getting started",
-      icon: "gettingstarted.png",
-      check: true,
-      phase: [{
-          id: "item1",
-          title: "Familiarizing the Layout",
-          view: "get-started",
-          check: $localStorage.phase1.layout=='done'
-        }, {
-          id: "item2",
-          title: "Importing Contacts",
-          view: "users",
-          check: $localStorage.phase1.import=='done'
-        }]
-    }, {
-      id: "phase2",
-      title: "users",
-      icon: "crm-icon.png",
-      check: $localStorage.directory.phase1=='done'
-    }, {
-      id: "phase3",
-      title: "CRM - Contacts & Companies",
-      icon: "contact.svg",
-      check: $localStorage.directory.phase2=='done'
-    }, {
-      id: "phase4",
-      title: "Branding",
-      icon: "happy.svg",
-      check: $localStorage.directory.phase3=='done'
-    }, {
-      id: "phase5",
-      title: "Sales Pipeline",
-      icon: "credit-card.svg",
-      check: $localStorage.directory.phase4=='done'
-    }, {
-      id: "phase6",
-      title: "Marketing",
-      icon: "email.svg",
-      check: $localStorage.directory.phase5=='done'
-    }]
-  }
-
-  return o;
-}]);
-
 tutorialApp.controller('directoryCtrl', ['$scope', 'directories', '$cookies', '$localStorage', '$sessionStorage', function($scope, directories, $cookies, $localStorage, $sessionStorage){
 
   $scope.directory = directories.directory
