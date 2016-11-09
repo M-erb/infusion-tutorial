@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="application-name" content=">Tutorial App"/>
-  <meta name="description" content=">Erb Chat Scripts">
+  <meta name="description" content="Walk through of how to use Infusionsoft">
   <meta name="theme-color" content="#79be37">
   <meta name="p:domain_verify" content="e22136ab81ca3341b04755aadb53f77f"/>
   <title>Infusionsoft Tutorials</title>
@@ -21,13 +21,14 @@
   <!--Angular-->
   <script src="app/lib/angular.min.js"></script>
   <script src="app/lib/angular-animate.min.js"></script>
-  <script src="app/lib/angular-route.min.js"></script>
+  <!--<script src="app/lib/angular-route.min.js"></script>-->
   <script src="app/lib/ngclipboard.min.js"></script>
   <script src="app/lib/angular.headroom.js"></script>
   <script src="app/lib/checklist-model.js"></script>
   <script src="app/lib/angular-cookies.min.js"></script>
   <!-- <script src="app/lib/ngStorage.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
   <script src="app/app.js"></script>
   <script src="app/angular.config.js"></script>
   <script src="app/lib/completedCheck.js"></script>
@@ -35,7 +36,7 @@
 <body class="purple_solid">
     <!-- <nav ng-include src="'views/nav.html'"></nav> -->
 
-    <main class="page {{pageClass}}" ng-view></main>
+    <main class="page {{pageClass}}" ui-view></main>
 
 </body>
 </html>
