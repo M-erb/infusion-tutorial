@@ -10,10 +10,10 @@ tutorialApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
       controller: 'directoryCtrl'
     });
   $stateProvider
-    .state('phase1', {
-      url: '/get-started',
-      templateUrl: 'views/get-started.html',
-      controller: 'phase1'
+    .state('phase', {
+      url: '/phase/{id}',
+      templateUrl: 'views/phase-template.html',
+      controller: 'phase'
     });
 
   $stateProvider

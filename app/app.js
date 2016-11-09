@@ -1,11 +1,62 @@
 var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ui.router','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
 
-tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
+tutorialApp.factory('directories',['$localStorage', function($localStorage){
+  var o = {
+    directory: [{
+      id: "phase1",
+      title: "getting started",
+      icon: "gettingstarted.png",
+      check: true,
+      phase: [{
+          id: "item1",
+          title: "Familiarizing the Layout",
+          view: "get-started",
+          check: $localStorage.phase1.layout=='done'
+        }, {
+          id: "item2",
+          title: "Importing Contacts",
+          view: "users",
+          check: $localStorage.phase1.import=='done'
+        }]
+    }, {
+      id: "phase2",
+      title: "users",
+      icon: "crm-icon.png",
+      check: $localStorage.directory.phase1=='done'
+    }, {
+      id: "phase3",
+      title: "CRM - Contacts & Companies",
+      icon: "contact.svg",
+      check: $localStorage.directory.phase2=='done'
+    }, {
+      id: "phase4",
+      title: "Branding",
+      icon: "happy.svg",
+      check: $localStorage.directory.phase3=='done'
+    }, {
+      id: "phase5",
+      title: "Sales Pipeline",
+      icon: "credit-card.svg",
+      check: $localStorage.directory.phase4=='done'
+    }, {
+      id: "phase6",
+      title: "Marketing",
+      icon: "email.svg",
+      check: $localStorage.directory.phase5=='done'
+    }]
+  }
 
-  $scope.storage = $localStorage
+  return o;
+}]);
+
+tutorialApp.controller('directoryCtrl', ['$scope', 'directories', '$cookies', '$localStorage', '$sessionStorage', function($scope, directories, $cookies, $localStorage, $sessionStorage){
+
+  $scope.directory = directories.directory
+  $scope.storage = $localStorage;
   $scope.pageClass = 'directory';
-  //house keeping for local storage
+
   var directoryCheck = function() {
+    //house keeping for local storage
     if ($localStorage.directory == null) {
       $localStorage.directory = {}
     }
@@ -33,67 +84,23 @@ tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localS
   }
   directoryCheck()
 
-  $scope.directory = [{
-    id: "phase1",
-    title: "getting started",
-    icon: "gettingstarted.png",
-    view: "get-started",
-    check: true
-  }, {
-    id: "phase2",
-    title: "users",
-    icon: "crm-icon.png",
-    view: "users",
-    check: $localStorage.directory.phase1=='done'
-  }, {
-    id: "phase3",
-    title: "CRM - Contacts & Companies",
-    icon: "contact.svg",
-    view: "users",
-    check: $localStorage.directory.phase2=='done'
-  }, {
-    id: "phase4",
-    title: "Branding",
-    icon: "contact.svg",
-    view: "branding",
-    check: $localStorage.directory.phase3=='done'
-  }, {
-    id: "phase5",
-    title: "Sales Pipeline",
-    icon: "contact.svg",
-    view: "sales-pipeline",
-    check: $localStorage.directory.phase4=='done'
-  }, {
-    id: "phase6",
-    title: "Marketing",
-    icon: "contact.svg",
-    view: "marketing",
-    check: $localStorage.directory.phase5=='done'
-  }]
-
 }]);
 
-tutorialApp.controller('phase1', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
-  $scope.storage = $localStorage
-  $scope.pageClass = 'getStarted'
+tutorialApp.controller('phase', ['$scope', '$stateParams','directories', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams,directories, $cookies, $localStorage, $sessionStorage, $stateParams){
 
-  $scope.getStartedList = [{
-    id: "item1",
-    title: "Familiarizing the Layout",
-    view: "get-started",
-    check: $localStorage.phase1.layout=='done'
-  }, {
-    id: "item2",
-    title: "Importing Contacts",
-    view: "users",
-    check: $localStorage.phase1.import=='done'
-  }]
+  $scope.directory = directories.directory[$stateParams.id]
+  $scope.storage = $localStorage
+  $scope.pageClass = $scope.directory.id
 
 }]);
 
 tutorialApp.controller('phase2', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
   $scope.storage = $localStorage
 
-  $scope.pageClass = 'importContacts';
+  $scope.pageClass = 'phase2';
 
 }]);
+
+
+//local storage notes
+//{"phase1":"done","phase2":"done","phase3":"done","phase4":"done","phase5":"done","phase6":"done"}

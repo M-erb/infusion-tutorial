@@ -1,0 +1,31 @@
+<div class="page_wrap">
+  <div>
+    <header>
+      <h1>{{directory.title}}</h1>
+    </header>
+    <a class="btn btn_white" href="/">Back</a>
+  </div>
+</div>
+
+<div class="page_wrap">
+  <div class="checklist_container">
+
+    <div ng-repeat="item in directory.phase">
+      <a class="checklist directory ready" href="/get-started/layout">
+        <div class="checkmark_container">
+        	<svg class="run-animation" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        		<circle class="mark circle ng-class:{'checked' : item.check }" cx="100" cy="100" r="94"/>
+        		<polyline class="mark checkmark ng-class:{'checked' : item.check }" points="46.9 101.4 76.9 131.4 146.4 61.9"/>
+        	</svg>
+        </div>
+        <h6 class="checklist_title">{{item.title}}</h6>
+      </a>
+    </div>
+
+  </div>
+
+
+  <div class="flex_center">
+    <a class="btn btn_blue" href="/" ng-click="storage.directory.phase1='done'">Done</a>
+  </div>
+</div>
