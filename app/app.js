@@ -6,35 +6,6 @@ tutorialApp.controller('directoryCtrl', ['$scope', 'directories', '$cookies', '$
   $scope.storage = $localStorage;
   $scope.pageClass = 'directory';
 
-  var directoryCheck = function() {
-    //house keeping for local storage
-    if ($localStorage.directory == null) {
-      $localStorage.directory = {}
-    }
-    if ($localStorage.phase1 == null) {
-      $localStorage.phase1 = {}
-    }
-    if ($localStorage.phase2 == null) {
-      $localStorage.phase2 = {}
-    }
-    if ($localStorage.phase3 == null) {
-      $localStorage.phase3 = {}
-    }
-    if ($localStorage.phase4 == null) {
-      $localStorage.phase4 = {}
-    }
-    if ($localStorage.phase5 == null) {
-      $localStorage.phase5 = {}
-    }
-    if ($localStorage.phase6 == null) {
-      $localStorage.phase6 = {}
-    }
-    if ($localStorage.phase7 == null) {
-      $localStorage.phase7 = {}
-    }
-  }
-  directoryCheck()
-
 }]);
 
 tutorialApp.controller('phase', ['$scope', '$stateParams','directories', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams,directories, $cookies, $localStorage, $sessionStorage, $stateParams){
