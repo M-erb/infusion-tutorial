@@ -22,6 +22,13 @@ tutorialApp.controller('phaseCtrl', ['$scope', '$stateParams','directory', '$coo
   $scope.storage = $localStorage
   $scope.pageClass = $scope.phase.class
 
+  console.log($scope.phase.tutList[0].check)
+
+  // for loop through the tutList array should fix this =D
+
+  //$scope.phase.tutList[0].check = $localStorage.phase1.layout=='done'
+  //$scope.phase.tutList[1].check = $localStorage.phase1.import=='done'
+
 }]);
 
 tutorialApp.controller('tutorialCtrl', ['$scope', '$stateParams','directory', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, directory, $cookies, $localStorage, $sessionStorage, $stateParams){

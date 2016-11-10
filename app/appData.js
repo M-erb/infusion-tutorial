@@ -39,6 +39,7 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
           id: "0",
           title: "Familiarizing the Layout",
           check: $localStorage.phase1.layout=='done',
+          doneBtn: function(){$localStorage.phase1.layout='done'},
           tutorialPages: [{
             title: "Main Navigation",
             body: "bla bla bla"
@@ -50,7 +51,16 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
         }, {
           id: "0",
           title: "Importing Contacts",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.import=='done',
+          doneBtn: function(){$localStorage.phase1.import='done'},
+          tutorialPages: [{
+            title: "Preparing CSV",
+            body: "bla bla bla"
+          }, {
+            title: "Mapping Fields"
+          }, {
+            title: "Survey"
+          }]
         }]
     }, {
       class: "phase2",
