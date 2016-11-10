@@ -1,7 +1,10 @@
 <div class="page_wrap">
   <div>
     <header>
-      <h1>{{directory.title}}</h1>
+      <div class="directory_title">
+        <img src="content/img/Infusionsoft Logo/1 Color/cornerstone 1 color - White.png" alt="infusionsoft logo" />
+        <h1 class="directory_title">{{phase.title}}</h1>
+      </div>
     </header>
     <a class="btn btn_white" href="/">Back</a>
   </div>
@@ -10,8 +13,8 @@
 <div class="page_wrap">
   <div class="checklist_container">
 
-    <div ng-repeat="item in directory.phase">
-      <a class="checklist directory ready" href="/get-started/layout">
+    <div ng-repeat="item in phase.tutList">
+      <a class="checklist directory ready" href="/phase{{item.id}}/tutorial{{$index}}">
         <div class="checkmark_container">
         	<svg class="run-animation" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         		<circle class="mark circle ng-class:{'checked' : item.check }" cx="100" cy="100" r="94"/>
@@ -26,6 +29,6 @@
 
 
   <div class="flex_center">
-    <a class="btn btn_blue" href="/" ng-click="directory.doneBtn()">Done</a>
+    <a class="btn btn_alt_white" href="/" ng-click="directory.doneBtn()">Done</a>
   </div>
 </div>

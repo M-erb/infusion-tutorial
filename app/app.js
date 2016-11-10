@@ -1,12 +1,13 @@
 var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ui.router','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
 
-tutorialApp.controller('directoryCtrl', ['$scope', 'directories', '$cookies', '$localStorage', '$sessionStorage', function($scope, directories, $cookies, $localStorage, $sessionStorage){
+tutorialApp.controller('directoryCtrl', ['$scope', 'directory', '$cookies', '$localStorage', '$sessionStorage', function($scope, directory, $cookies, $localStorage, $sessionStorage){
 
-  $scope.directory = directories.directory
+  $scope.directory = directory.directory
   $scope.storage = $localStorage;
   $scope.pageClass = 'directory';
 
   // needed to add these checks to the scope as the factory does not have two way binding
+  // Add one for every phase
   $scope.directory[1].check = $localStorage.directory.phase1=='done'
   $scope.directory[2].check = $localStorage.directory.phase2=='done'
   $scope.directory[3].check = $localStorage.directory.phase3=='done'
@@ -15,18 +16,19 @@ tutorialApp.controller('directoryCtrl', ['$scope', 'directories', '$cookies', '$
 
 }]);
 
-tutorialApp.controller('phase', ['$scope', '$stateParams','directories', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams,directories, $cookies, $localStorage, $sessionStorage, $stateParams){
+tutorialApp.controller('phaseCtrl', ['$scope', '$stateParams','directory', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, directory, $cookies, $localStorage, $sessionStorage, $stateParams){
 
-  $scope.directory = directories.directory[$stateParams.id]
+  $scope.phase = directory.directory[$stateParams.phaseIndex]
   $scope.storage = $localStorage
-  $scope.pageClass = $scope.directory.id
+  $scope.pageClass = $scope.phase.class
 
 }]);
 
-tutorialApp.controller('phase2', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
-  $scope.storage = $localStorage
+tutorialApp.controller('tutorialCtrl', ['$scope', '$stateParams','directory', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, directory, $cookies, $localStorage, $sessionStorage, $stateParams){
 
-  $scope.pageClass = 'phase2';
+  $scope.tut = directory.directory[$stateParams.phaseIndex].tutList[$stateParams.tutIndex]
+  $scope.storage = $localStorage
+  $scope.pageClass = directory.directory[$stateParams.phaseIndex].class
 
 }]);
 

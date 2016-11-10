@@ -1,4 +1,4 @@
-tutorialApp.factory('directories',['$localStorage', function($localStorage){
+tutorialApp.factory('directory',['$localStorage', function($localStorage){
   var directoryCheck = function() {
     //house keeping for local storage
     if ($localStorage.directory == null) {
@@ -30,113 +30,126 @@ tutorialApp.factory('directories',['$localStorage', function($localStorage){
 
   var o = {
     directory: [{
-      id: "phase1",
+      class: "phase1",
       title: "getting started",
       icon: "gettingstarted.png",
       check: true,
       doneBtn: function(){$localStorage.directory.phase1='done'},
-      phase: [{
-          id: "item1",
+      tutList: [{
+          id: "0",
           title: "Familiarizing the Layout",
-          check: $localStorage.phase1.layout=='done'
+          check: $localStorage.phase1.layout=='done',
+          tutorialPages: [{
+            title: "Main Navigation",
+            body: "bla bla bla"
+          }, {
+            title: "Home"
+          }, {
+            title: "Recent"
+          }]
         }, {
-          id: "item2",
+          id: "0",
           title: "Importing Contacts",
           check: $localStorage.phase1.import=='done'
         }]
     }, {
-      id: "phase2",
+      class: "phase2",
       title: "users",
       icon: "crm-icon.png",
       check: $localStorage.directory.phase1=='done',
       doneBtn: function(){$localStorage.directory.phase2='done'},
-      phase: [{
-          id: "item1",
+      tutList: [{
+          id: "1",
           title: "permissions",
-          check: $localStorage.phase1.layout=='done'
+          check: $localStorage.phase1.permissions=='done'
         }, {
-          id: "item2",
+          id: "1",
           title: "adding new users",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.newUsers=='done'
         }, {
-          id: "item2",
+          id: "1",
           title: "setting up users",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.setUpUsers=='done'
         }]
     }, {
-      id: "phase3",
+      class: "phase3",
       title: "CRM - Contacts & Companies",
       icon: "contact.svg",
       check: $localStorage.directory.phase2=='done',
       doneBtn: function(){$localStorage.directory.phase3='done'},
-      phase: [{
-          id: "item1",
+      tutList: [{
+          id: "2",
           title: "Adding",
-          check: $localStorage.phase1.layout=='done'
+          check: $localStorage.phase1.adding=='done'
         }, {
-          id: "item2",
+          id: "2",
           title: "Searching",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.search=='done'
         }, {
-          id: "item3",
+          id: "2",
           title: "tabs",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.tabs=='done'
         }, {
-          id: "item4",
+          id: "2",
           title: "general fields",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.general=='done'
         }, {
-          id: "item5",
+          id: "2",
           title: "custom fields",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.custom=='done'
         }]
     }, {
-      id: "phase4",
+      class: "phase4",
       title: "Branding",
       icon: "happy.svg",
       check: $localStorage.directory.phase3=='done',
       doneBtn: function(){$localStorage.directory.phase4='done'},
-      phase: [{
-          id: "item1",
+      tutList: [{
+          id: "3",
           title: "branding center",
-          check: $localStorage.phase1.layout=='done'
+          check: $localStorage.phase1.brandingCenter=='done'
         }, {
-          id: "item2",
+          id: "3",
           title: "templates",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.templates=='done'
         }]
     }, {
-      id: "phase5",
+      class: "phase5",
       title: "Sales Pipeline",
       icon: "credit-card.svg",
       check: $localStorage.directory.phase4=='done',
       doneBtn: function(){$localStorage.directory.phase5='done'},
-      phase: [{
-          id: "item1",
-          title: "Familiarizing the Layout",
+      tutList: [{
+          id: "4",
+          title: "lead scoring",
           view: "get-started",
-          check: $localStorage.phase1.layout=='done'
+          check: $localStorage.phase1.leadScore=='done'
         }, {
-          id: "item2",
-          title: "Importing Contacts",
+          id: "4",
+          title: "Opportunities",
           view: "users",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.opportunities=='done'
+        }, {
+          id: "4",
+          title: "pipeline",
+          view: "users",
+          check: $localStorage.phase1.pipeline=='done'
         }]
     }, {
-      id: "phase6",
+      class: "phase6",
       title: "Marketing",
       icon: "email.svg",
       check: function(){$localStorage.directory.phase5=='done'},
-      phase: [{
-          id: "item1",
-          title: "Familiarizing the Layout",
+      tutList: [{
+          id: "5",
+          title: "Sending a Broadcast",
           view: "get-started",
-          check: $localStorage.phase1.layout=='done'
+          check: $localStorage.phase1.broadcast=='done'
         }, {
-          id: "item2",
-          title: "Importing Contacts",
+          id: "5",
+          title: "Campaign - Overview",
           view: "users",
-          check: $localStorage.phase1.import=='done'
+          check: $localStorage.phase1.campaign=='done'
         }]
     }]
   }

@@ -1,0 +1,23 @@
+<div class="page_wrap">
+  <div>
+    <header>
+      <div class="directory_title">
+        <img src="content/img/Infusionsoft Logo/1 Color/cornerstone 1 color - White.png" alt="infusionsoft logo" />
+        <h1 class="directory_title">{{tut.title}}</h1>
+      </div>
+    </header>
+    <a class="btn btn_white" href="/phase{{tut.id}}">Back</a>
+  </div>
+</div>
+
+<div class="page_wrap">
+
+  <div ng-repeat="item in tut.tutorialPages">
+    {{item.title}} {{item.body}}
+  </div>
+
+</div>
+
+<div class="flex_center">
+  <a class="btn btn_alt_white" href="/" ng-click="directory.doneBtn()">Done</a>
+</div>

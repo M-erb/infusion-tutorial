@@ -11,20 +11,20 @@ tutorialApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     });
   $stateProvider
     .state('phase', {
-      url: '/phase/{id}',
+      url: '/phase{phaseIndex}',
       templateUrl: 'views/phase-template.html',
-      controller: 'phase'
+      controller: 'phaseCtrl'
     });
 
   $stateProvider
-    .state('phase2', {
-      url: '/users',
-      templateUrl: 'views/users.html',
-      controller: 'phase2'
+    .state('tutorial', {
+      url: '/phase{phaseIndex}/tutorial{tutIndex}',
+      templateUrl: 'views/tutorial-template.html',
+      controller: 'tutorialCtrl'
     });
 
 
-  $urlRouterProvider.otherwise('directory');
+  //$urlRouterProvider.otherwise('directory');
 }])
 
 

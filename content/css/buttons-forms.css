@@ -30,92 +30,74 @@
       background: white;
   }
 
-.btn_transparent {
-    border: 1px solid white;
-    color: #302B2C;
-    background: transparent;
-    border-radius: 3px;
-    padding: 0.3em 0.5em;
-    transition: all .3s;
+.btn_alt_white {
+  box-shadow: none;
+  box-shadow: 0;
+  border: 2px solid white;
+  color: #fff;
+  background: transparent;
+  transition: all .3s;
 }
-  .btn_transparent:hover {
-      color: #302B2C;
-      background: white;
+  .btn_alt_white:hover {
+    color: #79be37;
+    background: white;
   }
 
 .btn_darkgray {
-    border: 1px solid #2D2D30;
-    color: white;
-    background: #2D2D30;
+  border: 1px solid #2D2D30;
+  color: white;
+  background: #2D2D30;
 }
   .btn_darkgray:hover {
-      color: white;
+    color: white;
   }
 
 .btn_orange {
-    color: white;
-    background-color: rgba(255,150,16,1);
+  color: white;
+  background-color: rgba(255,150,16,1);
 }
   .btn_orange:hover {
-      color: white;
-      background: rgba(255,100,16,1);
+    color: white;
+    background: rgba(255,100,16,1);
   }
 
 .btn_blue {
-    color: white;
-    background: rgba(66,186,247,1);
+  color: white;
+  background: rgba(66,186,247,1);
 }
   .btn_blue:hover {
-      color: white;
-      background: rgba(66,186,255,1);
+    color: white;
+    background: rgba(66,186,255,1);
   }
-
-/*---SMALL BUTTONS---*/
-.button_orange_sm {
-    padding: 3px 10px;
-    text-decoration: none;
-    border: 1px solid #F55F41;
-    border-radius: 5px;
-    color: white;
-    display: inline-block;
-    line-height: 15px;
-    transition: all .5s;
-    background: #F55F41;
-}
-
-.button_orange_sm:hover {
-    color: white;
-    background: transparent;
-}
 
 /*---==forms==---*/
 .me-input-group input, [type=submit], .me-input-group textarea {
-    font-family: lato, sans-serif;
-    padding: 10px;
-    border-radius: 3px;
+  font-family: lato, sans-serif;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .me-input-group input, .me-input-group textarea {
-    background: #fff;
-    border: 1px solid #bdc3c7;
-    margin: 0 0 15px 0;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: all .5s;
-    font-size: 18px;
+  background: #fff;
+  border: 1px solid #bdc3c7;
+  margin: 0 0 15px 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: all .5s;
+  font-size: 18px;
 }
 
 .me-input-group textarea {
-    max-width: 100%;
-    height: 300px;
-    max-height: 400px;
+  max-width: 100%;
+  height: 300px;
+  max-height: 400px;
 }
 
 .me-input-group input:focus, .me-input-group textarea:focus {
-    outline: none;
-    border: 1px solid rgba(52,152,219,.5);
-    box-shadow: 0 0 5px #2980b9;
+  outline: none;
+  border: 1px solid rgba(52,152,219,.5);
+  box-shadow: 0 0 5px #2980b9;
 }
 /*-drop downs-*/
 .me-dropdown-group {
@@ -167,20 +149,20 @@ option .option_note {
 
 /*place holder style*/
 .me-input-group input::-webkit-input-placeholder {
-    color: rgba(80,80,80,.5);
-    font-size: 18px;
+  color: rgba(80,80,80,.5);
+  font-size: 18px;
 }
 .me-input-group input::-moz-placeholder {
-    color: rgba(80,80,80,.5);
-    font-size: 18px;
+  color: rgba(80,80,80,.5);
+  font-size: 18px;
 }
 .me-input-group input:-ms-input-placeholder {
-    color: rgba(80,80,80,.5);
-    font-size: 18px;
+  color: rgba(80,80,80,.5);
+  font-size: 18px;
 }
 .me-input-group input:-moz-placeholder {
-    color: rgba(80,80,80,.5);
-    font-size: 18px;
+  color: rgba(80,80,80,.5);
+  font-size: 18px;
 }
 
 /* .me-checkbox */
@@ -234,15 +216,15 @@ option .option_note {
 
 /*submit*/
 .me-input-group [type=submit] {
-    border: 0px;
-    border: none;
-    color: rgba(80,80,80,1);
-    font-weight: 700;
-    cursor: pointer;
-    transition: all .5s;
-    padding: 10px 20px;
+  border: 0px;
+  border: none;
+  color: rgba(80,80,80,1);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .5s;
+  padding: 10px 20px;
 }
 .me-input-group [type=submit]:hover {
-    outline: none;
-    box-shadow: 0 0 4px #2980b9;
+  outline: none;
+  box-shadow: 0 0 4px #2980b9;
 }

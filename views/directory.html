@@ -10,7 +10,7 @@
 <!-- would be best to figure this out so it can use an ng-repeat-->
   <div class="card_container">
     <div ng-repeat="card in directory">
-      <a class="card directory ng-class:{'ready': card.check }" ng-href="/phase/{{$index}}">
+      <a class="card directory ng-class:{'ready': card.check }" ng-href="/phase{{$index}}">
         <h6 class="card_title">{{card.title}}</h6>
         <div class="card_icon_wrap">
           <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="{{card.title}}" />
