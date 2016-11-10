@@ -10,7 +10,7 @@
 <!-- would be best to figure this out so it can use an ng-repeat-->
   <div class="card_container">
     <div ng-repeat="card in directory">
-      <a class="card directory ng-class:{'ready': card.check }" ng-href="/{{card.view}}">
+      <a class="card directory ng-class:{'ready': card.check }" ng-href="/phase/{{$index}}">
         <h6 class="card_title">{{card.title}}</h6>
         <div class="card_icon_wrap">
           <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="{{card.title}}" />
@@ -19,20 +19,4 @@
     </div>
   </div>
 
-<!--
-  <div class="card_container">
-    <a class="card directory ready" href="/get-started">
-      <h6 class="card_title">getting started</h6>
-      <div class="card_icon_wrap">
-        <img src="content/img/icons/gettingstarted.png" alt="get started icon" />
-      </div>
-    </a>
-    <a class="card directory ng-class:{'ready': storage.directory.gettingStarted=='done' }" href="/import-contacts">
-      <h6 class="card_title">users</h6>
-      <div class="card_icon_wrap">
-        <img src="content/img/icons/crm-icon.png" alt="Import contacts icon" />
-      </div>
-    </a>
-  </div>
--->
 </div>

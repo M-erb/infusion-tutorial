@@ -1,0 +1,82 @@
+<filesMatch ".(html|htm|js|css)$">
+	FileETag None
+	<ifModule mod_headers.c>
+		Header unset ETag
+		Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+		Header set Pragma "no-cache"
+		Header set Expires "Wed, 08 Jan 1975 05:00:00 GMT"
+	</ifModule>
+</filesMatch>
+
+RewriteEngine On
+
+  # If an existing asset or directory is requested go to it as it is
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+  RewriteRule ^ - [L]
+
+  # If the requested resource doesn't exist, use index.html
+  RewriteRule ^ /index.html
+
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://an140.infusionsoft.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://an140.infusionsoft.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://chats.tiedwithstrings.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://chats.tiedwithstrings.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://comments.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://comments.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://family.tiedwithstrings.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://family.tiedwithstrings.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://htmlprojects.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://htmlprojects.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://instant-update.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://instant-update.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://mrmroofing.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://mrmroofing.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://pagekit.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://pagekit.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://testform.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://testform.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://testing.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://testing.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.com/test/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.com/test$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.customerhub.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.customerhub.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://tiedwithstrings.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.chats.tiedwithstrings.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.chats.tiedwithstrings.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.comments.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.comments.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.family.tiedwithstrings.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.family.tiedwithstrings.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.instant-update.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.instant-update.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.mrmroofing.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.mrmroofing.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.pagekit.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.pagekit.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.testing.erbwebdev.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.testing.erbwebdev.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.tiedwithstrings.merbporta.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.tiedwithstrings.merbporta.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://an140.infusionsoft.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://an140.infusionsoft.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tiedwithstrings.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tiedwithstrings.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tiedwithstrings.com/test/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tiedwithstrings.com/test$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tiedwithstrings.customerhub.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://tiedwithstrings.customerhub.net$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]

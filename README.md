@@ -1,7 +1,11 @@
 # Infusion-Tutorial
 
 ## GOALS
+<<<<<<< HEAD
 1) Give direct instruction and helpful information so a new customer can get started 
+=======
+1) Give direct instruction and helpful information so a new customer can get started
+>>>>>>> testing
 
 
 2) Save time for Consultants AND Customer during call to get into the meat of their business and start using Infusionsoft with it
@@ -245,7 +249,11 @@ Upsell to VAS for complicated areas
 2. Stage to Stage
 3. Opportunity Created Detail
 4. Call
+<<<<<<< HEAD
 5. Pipeline 
+=======
+5. Pipeline
+>>>>>>> testing
 
 ## Marketing
 1. Tag Application

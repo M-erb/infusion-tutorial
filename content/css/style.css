@@ -136,7 +136,8 @@ footer {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+	color: #fff;
 }
 
 /*enter and leave animations*/
@@ -152,14 +153,34 @@ footer {
 
 /*specific pages*/
 .page.directory {
-
+	background: #8464CA;
 }
 
-.page.getStarted {
+.page.phase1 {
 	background: #79be37;
 }
 
-.page.importContacts {
+.page.phase2 {
+	background: #00baf7;
+}
+
+.page.phase3 {
+	background: #ff9610;
+}
+
+.page.phase4 {
+	background: #8464CA;
+}
+
+.page.phase5 {
+	background: #79be37;
+}
+
+.page.phase6 {
+	background: #00baf7;
+}
+
+.page.phase7 {
 	background: #ff9610;
 }
 

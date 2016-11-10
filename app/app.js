@@ -1,67 +1,35 @@
-var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ngRoute','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
+var tutorialApp = angular.module('tutorialApp', ['ngAnimate','ui.router','ngclipboard','headroom','checklist-model','ngCookies','ngStorage']);
 
-tutorialApp.controller('directoryCtrl', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
+tutorialApp.controller('directoryCtrl', ['$scope', 'directories', '$cookies', '$localStorage', '$sessionStorage', function($scope, directories, $cookies, $localStorage, $sessionStorage){
 
-  $scope.storage = $localStorage
+  $scope.directory = directories.directory
+  $scope.storage = $localStorage;
   $scope.pageClass = 'directory';
-  /*
-    $http.get('data/directory.json').success(function(Data){
-      $scope.directory = Data;
-    })
-  */
-  //house keeping for local storage
-  var directoryCheck = function() {
-    if ($localStorage.directory == null) {
-      $localStorage.directory = {}
-    }
-    if ($localStorage.getStarted == null) {
-      $localStorage.getStarted = {}
-    }
-  }
-  directoryCheck()
 
-  $scope.directory = [{
-    id: "item1",
-    title: "getting started",
-    icon: "gettingstarted.png",
-    view: "get-started",
-    check: true
-  }, {
-    id: "item2",
-    title: "users",
-    icon: "crm-icon.png",
-    view: "users",
-    check: $localStorage.directory.gettingStarted=='done'
-  }]
+  // needed to add these checks to the scope as the factory does not have two way binding
+  $scope.directory[1].check = $localStorage.directory.phase1=='done'
+  $scope.directory[2].check = $localStorage.directory.phase2=='done'
+  $scope.directory[3].check = $localStorage.directory.phase3=='done'
+  $scope.directory[4].check = $localStorage.directory.phase4=='done'
+  $scope.directory[5].check = $localStorage.directory.phase5=='done'
 
 }]);
 
-tutorialApp.controller('phase1', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
+tutorialApp.controller('phase', ['$scope', '$stateParams','directories', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams,directories, $cookies, $localStorage, $sessionStorage, $stateParams){
+
+  $scope.directory = directories.directory[$stateParams.id]
   $scope.storage = $localStorage
-
-  $scope.pageClass = 'getStarted';
-
-  $scope.getStartedDone = function() {
-    $localStorage.getingStarted = 'done';
-  };
-
-  $scope.getStartedList = [{
-    id: "item1",
-    title: "Familiarizing the Layout",
-    view: "get-started",
-    check: $localStorage.getStarted.layout=='done'
-  }, {
-    id: "item2",
-    title: "Importing Contacts",
-    view: "users",
-    check: $localStorage.getStarted.import=='done'
-  }]
+  $scope.pageClass = $scope.directory.id
 
 }]);
 
 tutorialApp.controller('phase2', ['$scope', '$http', '$cookies', '$localStorage', '$sessionStorage', function($scope, $http, $cookies, $localStorage, $sessionStorage){
   $scope.storage = $localStorage
 
-  $scope.pageClass = 'importContacts';
+  $scope.pageClass = 'phase2';
 
 }]);
+
+
+//local storage notes
+//{"phase1":"done","phase2":"done","phase3":"done","phase4":"done","phase5":"done","phase6":"done"}
