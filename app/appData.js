@@ -33,7 +33,8 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
       class: "phase1",
       title: "getting started",
       icon: "gettingstarted.png",
-      check: function(){return true},
+      checkThis: function(){return $localStorage.directory.phase1=='done'},
+      checkprev: function(){return true},
       doneBtn: function(){$localStorage.directory.phase1='done'},
       tutList: [{
           id: "0",
@@ -42,11 +43,19 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
           doneBtn: function(){$localStorage.phase1.layout='done'},
           tutorialPages: [{
             title: "Main Navigation",
-            body: "bla bla bla"
+            body: "bla bla bla",
+            prevSlide: "",
+            nextSlide: ""
           }, {
-            title: "Home"
+            title: "Home",
+            body: "this is a new page",
+            prevSlide: "",
+            nextSlide: ""
           }, {
-            title: "Recent"
+            title: "Recent",
+            body: "hey loook another new page",
+            prevSlide: "",
+            nextSlide: ""
           }]
         }, {
           id: "0",
@@ -66,7 +75,8 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
       class: "phase2",
       title: "users",
       icon: "crm-icon.png",
-      check: function(){return $localStorage.directory.phase1=='done'},
+      checkThis: function(){return $localStorage.directory.phase2=='done'},
+      checkprev: function(){return $localStorage.directory.phase1=='done'},
       doneBtn: function(){$localStorage.directory.phase2='done'},
       tutList: [{
           id: "1",
@@ -88,7 +98,8 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
       class: "phase3",
       title: "CRM - Contacts & Companies",
       icon: "contact.svg",
-      check: function(){return $localStorage.directory.phase2=='done'},
+      checkThis: function(){return $localStorage.directory.phase3=='done'},
+      checkprev: function(){return $localStorage.directory.phase2=='done'},
       doneBtn: function(){$localStorage.directory.phase3='done'},
       tutList: [{
           id: "2",
@@ -115,7 +126,8 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
       class: "phase4",
       title: "Branding",
       icon: "happy.svg",
-      check: function(){return $localStorage.directory.phase3=='done'},
+      checkThis: function(){return $localStorage.directory.phase4=='done'},
+      checkprev: function(){return $localStorage.directory.phase3=='done'},
       doneBtn: function(){$localStorage.directory.phase4='done'},
       tutList: [{
           id: "3",
@@ -130,7 +142,8 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
       class: "phase5",
       title: "Sales Pipeline",
       icon: "credit-card.svg",
-      check: function(){return $localStorage.directory.phase4=='done'},
+      checkThis: function(){return $localStorage.directory.phase5=='done'},
+      checkprev: function(){return $localStorage.directory.phase4=='done'},
       doneBtn: function(){$localStorage.directory.phase5='done'},
       tutList: [{
           id: "4",
@@ -152,7 +165,9 @@ tutorialApp.factory('directory',['$localStorage', function($localStorage){
       class: "phase6",
       title: "Marketing",
       icon: "email.svg",
-      check: function(){return $localStorage.directory.phase5=='done'},
+      checkThis: function(){return $localStorage.directory.phase6=='done'},
+      checkprev: function(){return $localStorage.directory.phase5=='done'},
+      doneBtn: function(){$localStorage.directory.phase6='done'},
       tutList: [{
           id: "5",
           title: "Sending a Broadcast",

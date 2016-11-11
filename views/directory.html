@@ -10,7 +10,13 @@
 <!-- would be best to figure this out so it can use an ng-repeat-->
   <div class="card_container">
     <div ng-repeat="card in directory">
-      <a class="card directory ng-class:{'ready': card.check() }" ng-href="/phase{{$index}}">
+      <a class="card directory ng-class:{'ready': card.checkprev() }" ng-href="/phase{{$index}}">
+        <div class="checkmark_container">
+        	<svg class="run-animation" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        		<circle class="mark circle ng-class:{'checked' : card.checkThis() }" cx="100" cy="100" r="94"/>
+        		<polyline class="mark checkmark ng-class:{'checked' : card.checkThis() }" points="46.9 101.4 76.9 131.4 146.4 61.9"/>
+        	</svg>
+        </div>
         <h6 class="card_title">{{card.title}}</h6>
         <div class="card_icon_wrap">
           <img src="content/img/icons/gettingstarted.png" ng-src="content/img/icons/{{card.icon}}" alt="{{card.title}}" />

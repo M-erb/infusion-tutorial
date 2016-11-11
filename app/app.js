@@ -22,6 +22,14 @@ tutorialApp.controller('tutorialCtrl', ['$scope', '$stateParams','directory', '$
   $scope.storage = $localStorage
   $scope.pageClass = directory.directory[$stateParams.phaseIndex].class
 
+
+  $scope.showIndex = function(index) {
+    var length = $scope.tut.tutorialPages.length
+
+
+    return false
+  }
+
 }]);
 
 

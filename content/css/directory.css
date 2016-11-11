@@ -14,7 +14,7 @@
   display: inline-block;
   background: #fff;
   padding: 3em 1em;
-  margin: 3vmax;
+  margin: calc(10px + -1em + 4vw);
   width: 190px;
   height: 223px;
   color: #303442;
@@ -24,6 +24,7 @@
   box-shadow: 3px 4px 20px rgba(41,41,41,.5);
   transition: all 0.2s;
   cursor: pointer;
+  position: relative;
 }
 .directory.card {
   filter: grayscale(1);
@@ -42,16 +43,6 @@ a.card {
   transform: scale(1);
 }
 
-
-/*activity colors*/
-.directory.card.ready {
-  filter: grayscale(0);
-  background: #fff;
-}
-.directory.card.ready:hover {
-  transform: scale(1.05);
-}
-
 .directory_title {
   display: flex;
   justify-content: center;
@@ -67,6 +58,33 @@ a.card {
 .directory_title h1 {
   align-self: center;
   margin-left: 0.6em;
+}
+
+/*activity styles*/
+.directory.card.ready {
+  filter: grayscale(0);
+  background: #fff;
+}
+.directory.card.ready:hover {
+  transform: scale(1.05);
+}
+.directory.card .checkmark_container svg {
+  position: absolute;
+  bottom: 0.6em;
+  left: 0.6em;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+.run-animation .circle {
+  -webkit-animation: 2s circleDraw forwards;
+          animation: 2s circleDraw forwards;
+}
+.run-animation .checkmark {
+  -webkit-animation: 1s checkmarkDraw forwards;
+          animation: 1s checkmarkDraw forwards;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
 }
 
 /*check lists*/
@@ -131,18 +149,17 @@ a.card {
   stroke: #79be37;
 }
 
-/*
-.run-animation .circle {
+/*.checkmark_container svg .checked.circle {
   -webkit-animation: 2.5s circleDraw forwards;
           animation: 2.5s circleDraw forwards;
 }
-.run-animation .checkmark {
+
+.checkmark_container svg .checked.checkmark {
   -webkit-animation: 0.75s checkmarkDraw forwards;
           animation: 0.75s checkmarkDraw forwards;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
-}
-*/
+}*/
 
 @-webkit-keyframes circleDraw {
   from {stroke-dashoffset: 700;}

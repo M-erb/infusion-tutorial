@@ -1,0 +1,101 @@
+.back_btn {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 30px;
+  height: 30px;
+  display: flex;
+}
+.back_btn div {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 1px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  align-self: center;
+}
+.back_btn div:first-child {
+  transform: rotate(45deg);
+}
+.back_btn div:last-child {
+  transform: rotate(-45deg);
+}
+
+
+.page_slider_wrap {
+	position: relative;
+	width: 100%;
+	color: #fff;
+}
+.page_slider_container {
+	position: relative;
+	width: 100%;
+  height: 100%;
+
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -100;
+}
+
+.slide0 {
+  z-index: 0;
+}
+.slide1 {
+  z-index: -10;
+}
+.slide2 {
+  z-index: -20;
+}
+.slide3 {
+  z-index: -30;
+}
+
+.slideBtns {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.slideBtns span {
+  display: block;
+  align-self: center;
+  font-size: 1em;
+}
+.prev {
+  left: 0.5em;
+}
+.next {
+  right: 0.5em;
+}
+
+/*angular show animations*/
+.ng-hide {
+	transition: opacity ease-in-out 0.3s;
+	opacity: 0;
+}
+
+* {
+	transition: opacity ease-in-out 0.3s;
+}
+
+/*enter and leave animations
+.page.ng-enter {
+	animation-name: bounceInRight;
+	animation-duration: 0.8s;
+}
+
+.page.ng-leave {
+	animation-name: bounceOutLeft;
+	animation-duration: 0.8s;
+}*/
