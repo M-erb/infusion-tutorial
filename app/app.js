@@ -6,28 +6,13 @@ tutorialApp.controller('directoryCtrl', ['$scope', 'directory', '$cookies', '$lo
   $scope.storage = $localStorage;
   $scope.pageClass = 'directory';
 
-  // needed to add these checks to the scope as the factory does not have two way binding
-  // Add one for every phase
-  $scope.directory[1].check = $localStorage.directory.phase1=='done'
-  $scope.directory[2].check = $localStorage.directory.phase2=='done'
-  $scope.directory[3].check = $localStorage.directory.phase3=='done'
-  $scope.directory[4].check = $localStorage.directory.phase4=='done'
-  $scope.directory[5].check = $localStorage.directory.phase5=='done'
-
 }]);
 
 tutorialApp.controller('phaseCtrl', ['$scope', '$stateParams','directory', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, directory, $cookies, $localStorage, $sessionStorage, $stateParams){
 
-  $scope.phase = directory.directory[$stateParams.phaseIndex]
   $scope.storage = $localStorage
+  $scope.phase = directory.directory[$stateParams.phaseIndex]
   $scope.pageClass = $scope.phase.class
-
-  console.log($scope.phase.tutList[0].check)
-
-  // for loop through the tutList array should fix this =D
-
-  //$scope.phase.tutList[0].check = $localStorage.phase1.layout=='done'
-  //$scope.phase.tutList[1].check = $localStorage.phase1.import=='done'
 
 }]);
 

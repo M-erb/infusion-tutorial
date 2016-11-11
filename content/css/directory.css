@@ -27,7 +27,7 @@
 }
 .directory.card {
   filter: grayscale(1);
-  background: rgb(240,240,240);
+  background: rgb(210,210,210);
 }
 a.card {
   text-decoration: none;
@@ -39,13 +39,17 @@ a.card {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1);
 }
+
 
 /*activity colors*/
 .directory.card.ready {
   filter: grayscale(0);
   background: #fff;
+}
+.directory.card.ready:hover {
+  transform: scale(1.05);
 }
 
 .directory_title {
