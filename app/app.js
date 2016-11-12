@@ -27,7 +27,7 @@ tutorialApp.controller('tutorialCtrl', ['$scope', '$stateParams','directory', '$
     var length = $scope.tut.tutorialPages.length
 
 
-    return false
+    //return false
   }
 
 }]);
