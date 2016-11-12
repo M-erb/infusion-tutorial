@@ -22,15 +22,21 @@ tutorialApp.controller('tutorialCtrl', ['$scope', '$stateParams','directory', '$
   $scope.storage = $localStorage
   $scope.pageClass = directory.directory[$stateParams.phaseIndex].class
 
-
-  $scope.showIndex = function(index) {
-    var length = $scope.tut.tutorialPages.length
-
-
-    //return false
-  }
+  $scope.tutPages = $scope.tut.tutPages
 
 }]);
+
+tutorialApp.directive('tutSlider', function() {
+  return {
+    restrict: 'AE',
+    replace: true,
+    scope: {
+      tutPages: '='
+    },
+    link: function(scope, elem, attrs) {},
+    templateUrl: 'views/tutPages-template.html'
+  }
+});
 
 
 //local storage notes
