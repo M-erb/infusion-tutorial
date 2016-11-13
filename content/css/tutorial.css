@@ -24,7 +24,6 @@
 
 
 .page_slider_wrap {
-	position: relative;
 	width: 100%;
 	color: #fff;
 }
@@ -35,27 +34,22 @@
 
 }
 
-/*.slide {
+.slide {
   position: absolute;
   width: 100%;
-  height: 100%;
-  display: flex;
-  z-index: -100;
+  transition: opacity ease-in-out 0.3s;
+  animation-name: bounceInRight;
+	animation-duration: 0.8s;
 }
 
-.slide0 {
-  z-index: 0;
+/*enter and leave animations*/
+.slide.ng-hide {
+	animation-name: bounceOutLeft;
+	animation-duration: 0.8s;
+  display: block!important;
 }
-.slide1 {
-  z-index: -10;
-}
-.slide2 {
-  z-index: -20;
-}
-.slide3 {
-  z-index: -30;
-}*/
 
+/*next buttons*/
 .slideBtns {
   position: absolute;
   top: 50%;
@@ -67,6 +61,10 @@
   display: flex;
   justify-content: center;
   transition: all 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .slideBtns:hover {
   transform: scale(1.2);
@@ -82,24 +80,3 @@
 .next {
   right: 0.5em;
 }
-
-/*angular show animations*/
-.ng-hide {
-	transition: opacity ease-in-out 0.3s;
-	opacity: 0;
-}
-
-* {
-	transition: opacity ease-in-out 0.3s;
-}
-
-/*enter and leave animations
-.page.ng-enter {
-	animation-name: bounceInRight;
-	animation-duration: 0.8s;
-}
-
-.page.ng-leave {
-	animation-name: bounceOutLeft;
-	animation-duration: 0.8s;
-}*/

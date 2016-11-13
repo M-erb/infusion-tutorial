@@ -1,4 +1,4 @@
-<a class="back_btn" href="/phase{{tut.id}}">
+<a class="back_btn" href="/phase{{tutList.id}}">
   <div></div>
   <div></div>
 </a>
@@ -7,27 +7,18 @@
   <header>
     <div class="directory_title">
       <img src="content/img/Infusionsoft Logo/1 Color/cornerstone 1 color - White.png" alt="infusionsoft logo" />
-      <h1 class="directory_title">{{tut.title}}</h1>
+      <h1 class="directory_title">{{tutList.title}}</h1>
     </div>
   </header>
 </div>
 
-<div class="slideBtns prev" ng-click=""><span><</span></div>
-<div class="slideBtns next" ng-click=""><span>></span></div>
+<div class="slideBtns prev" ng-click="prev()" ng-hide="currentIndex==0"><span><</span></div>
+<div class="slideBtns next" ng-click="next()" ng-hide="currentIndex==pages.length-1"><span>></span></div>
 
 <div class="page_slider_wrap">
   <div class="page_slider_container">
-    <div class="slide slide{{$index}}" ng-repeat="item in tut.tutorialPages">
+    <div class="slide slide{{$index}}" ng-repeat="item in pages" ng-show="item.visible">
       {{item.title}} {{$index}}
-    <!-- a possible way to make this work can be foudn here:
-      https://www.sitepoint.com/creating-slide-show-plugin-angularjs/
-
-      example files:
-      https://github.com/jsprodotcom/source/blob/master/angular-slider.zip
-     -->
-
-
-
     </div>
   </div>
 </div>
@@ -35,3 +26,12 @@
 <!--<div class="flex_center">
   <a class="btn btn_alt_white" href="/phase{{tut.id}}" ng-click="tut.doneBtn()">Done</a>
 </div>-->
+
+
+
+<!-- a possible way to make this work can be foudn here:
+  https://www.sitepoint.com/creating-slide-show-plugin-angularjs/
+
+  example files:
+  https://github.com/jsprodotcom/source/blob/master/angular-slider.zip
+ -->

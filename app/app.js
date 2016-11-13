@@ -18,17 +18,27 @@ tutorialApp.controller('phaseCtrl', ['$scope', '$stateParams','directory', '$coo
 
 tutorialApp.controller('tutorialCtrl', ['$scope', '$stateParams','directory', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, directory, $cookies, $localStorage, $sessionStorage, $stateParams){
 
-  $scope.tut = directory.directory[$stateParams.phaseIndex].tutList[$stateParams.tutIndex]
+  $scope.tutList = directory.directory[$stateParams.phaseIndex].tutList[$stateParams.tutIndex]
   $scope.storage = $localStorage
   $scope.pageClass = directory.directory[$stateParams.phaseIndex].class
 
+  $scope.pages = $scope.tutList.tutorialPages
+  $scope.currentIndex=0;
 
-  $scope.showIndex = function(index) {
-    var length = $scope.tut.tutorialPages.length
+  $scope.prev=function(){
+    $scope.currentIndex>0?$scope.currentIndex--:$scope.currentIndex=$scope.pages.length-1;
+  };
 
+  $scope.next=function(){
+    $scope.currentIndex<$scope.pages.length-1?$scope.currentIndex++:$scope.currentIndex=$scope.pages.length-1;
+  };
 
-    //return false
-  }
+  $scope.$watch('currentIndex',function(){
+    $scope.pages.forEach(function(page){
+      page.visible=false;
+    });
+    $scope.pages[$scope.currentIndex].visible=true;
+  });
 
 }]);
 
