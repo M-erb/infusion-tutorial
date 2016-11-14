@@ -22,7 +22,6 @@
   transform: rotate(-45deg);
 }
 
-
 .page_slider_wrap {
 	width: 100%;
 	color: #fff;
@@ -31,13 +30,14 @@
 	position: relative;
 	width: 100%;
   height: 100%;
-
 }
 
 .slide {
   position: absolute;
   width: 100%;
   transition: opacity ease-in-out 0.3s;
+}
+.slide.active {
   animation-name: bounceInRight;
 	animation-duration: 0.8s;
 }
